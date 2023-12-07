@@ -17,6 +17,13 @@ RSpec.feature 'Manager Citizens', type: :feature do
     visit new_manager_citizen_path
 
     find('#citizen_full_name', match: :first).set('Cidadão 3')
+    find('#citizen_date_birth_1i', match: :first).set('15')
+    find('#citizen_date_birth_2i', match: :first).set('4')
+    find('#citizen_date_birth_3i', match: :first).set('1974')
+    find('#citizen_cpf', match: :first).set('03997653283')
+    find('#citizen_cns', match: :first).set('854154873000008')
+    find('#citizen_email', match: :first).set('gessica.dutra@gmail.com')
+    find('#citizen_phone', match: :first).set('5568981278826')
 
     click_button I18n.t('views.manager.citizens.save')
 
