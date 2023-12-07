@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: <%= ENV['POSTGRES_USER'] || 'postgres'%>
+  password: <%= ENV['POSTGRES_PASSWD'] || 'postgres' %>
+  host: <%= ENV['POSTGRES_HOST'] || 'localhost' %>
+  port: 5432
+  pool: 5
+
+development:
+  <<: *default
+  database: desafio_jedis_development
+
+test:
+  <<: *default
+  database: desafio_jedis_test
+
+production:
+  <<: *default
+  database: desafio_jedis_production
