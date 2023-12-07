@@ -104,7 +104,39 @@
         </ul>
       </li>
       <li>
-
+        <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-citizen">
+          <svg fill="#000000" height="20px" width="20px" version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 256 256" xml:space="preserve">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path id="XMLID_7_" d="M123.5,127c2.7-2.5,6-3.9,9.4-3.9H251v15.8H136.9c-3.9,0-6,2.2-7.2,3.3c-5,4.7-38.5,35.5-38.5,35.5l-10.1-9.9 C81.1,167.9,118.8,131.4,123.5,127 M191.1,41.1c13.4,0,20.7-9.3,20.7-20.7c0-11.4-9.3-20.7-20.7-20.7c-11.4,0-20.7,9.3-20.7,20.7 C170.4,31.8,179.7,41.1,191.1,41.1 M160.4,76.6h6.9l-10.2,36.5H225l-10.2-36.5h6.9l10.5,36.5h17.9l-14.4-48.4 c-1.9-6.7-10.4-18.5-25-18.5h-39.4c-14.6,0-23.1,11.9-25,18.5L132,113.1h17.9L160.4,76.6z M101.8,111.2L93,94.8l-9.4-17.6 c0,0-1.1-1.6-3.1-0.7c-1.8,0.9-1,2.9-1,2.9l6,11.5l3.8,7.2l-4.3-2c-7.7-3.5-11.9-4.9-13.6-5.7c-0.3-0.1-1.8-1-2.5-2.5 c-2-4.5-10.6-26.2-12.5-31c-1.6-4.1-5.6-9.8-13.9-11.9c-9.4-2.3-18.9,3.6-21.1,13L8.6,112.2c-1.1,4.4-3.1,16.2-3.1,21.1 c0,5,0.1,105.6,0.1,105.6C5.6,247.9,12,255,20.9,255c8.9,0,15-7.3,14.9-16.2c0,0,0-57.5,0-89.5l13.7-57.7c1.6,3.9,3.6,8.7,4.2,9.8 c1.6,2.7,3.1,4.6,6.2,6c0,0,17.9,7.4,24.8,10.6c4.2,1.6,8.7,0.2,11.3-3.1l1-2l0.3,0.6c0,0,2,3.6,5.1,3.8 C103.3,114.5,101.8,111.2,101.8,111.2 M74.1,20.2c0-11.4-9.3-20.7-20.7-20.7C42-0.4,32.8,8.8,32.8,20.2c0,11.4,9.3,20.7,20.7,20.7 C64.9,40.9,74.1,31.7,74.1,20.2 M83.4,155.2l40.3-37.5l-5.2-5.6l-40.3,37.5L83.4,155.2z"></path>
+            </g>
+          </svg>
+          <span class="flex-1 ml-3 text-left whitespace-nowrap">Cadastros</span>
+          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+          </svg>
+        </button>
+        <ul id="dropdown-citizen" class="hidden py-2 space-y-2">
+          <li>
+            <%= link_to manager_citizens_path, class: "flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" do %>
+              <svg height="15px" width="15px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <style type="text/css"> .st0 {
+                      fill: #000000;
+                  } </style>
+                  <g>
+                    <path class="st0" d="M458.159,404.216c-18.93-33.65-49.934-71.764-100.409-93.431c-28.868,20.196-63.938,32.087-101.745,32.087 c-37.828,0-72.898-11.89-101.767-32.087c-50.474,21.667-81.479,59.782-100.398,93.431C28.731,448.848,48.417,512,91.842,512 c43.426,0,164.164,0,164.164,0s120.726,0,164.153,0C463.583,512,483.269,448.848,458.159,404.216z"></path>
+                    <path class="st0" d="M256.005,300.641c74.144,0,134.231-60.108,134.231-134.242v-32.158C390.236,60.108,330.149,0,256.005,0 c-74.155,0-134.252,60.108-134.252,134.242V166.4C121.753,240.533,181.851,300.641,256.005,300.641z"></path>
+                  </g>
+                </g>
+              </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap"><%= t('views.layouts.internal.citizen') %></span>
+            <% end %>
+          </li>
+        </ul>
       </li>
     </ul>
   </div>

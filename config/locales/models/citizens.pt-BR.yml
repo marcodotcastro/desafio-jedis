@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    errors:
+      models:
+        citizen:
+          attributes:
+            name:
+              blank: 'nao pode ficar em branco'
+    models:
+      citizen:
+        one: 'Cidadão'
+        other: 'Cidadãos'
+    attributes:
+      citizen:
+        full_name: 'Nome Completo'
+        created_at: 'Criado em'
+        updated_at: 'Atualizado em'

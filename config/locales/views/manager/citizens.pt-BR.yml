@@ -1,0 +1,22 @@
+pt-BR:
+  views:
+    manager:
+      citizens:
+        show: 'Mostrar'
+        edit: 'Editar'
+        delete_confirm: 'Você tem certeza?'
+        index:
+          search: 'Pesquisar'
+          add_citizen: "Cadastrar cidadão"
+          pages:
+            showing: 'Mostrando'
+            of: 'de'
+          previous: 'anterior'
+          next: 'próximo'
+        save: 'Salvar'
+        edit_view:
+          title: 'Editando Cidadão'
+        show_view:
+          title: 'Detalhando Cidadão'
+        _form:
+          error: 'impediu esse cidadão de ser cadastrado'

@@ -1,0 +1,6 @@
+pt-BR:
+  controllers:
+    manager:
+      citizens:
+        create: 'Cidadão cadastrada com sucesso.'
+        update: 'Cidadão atualizada com sucesso.'
