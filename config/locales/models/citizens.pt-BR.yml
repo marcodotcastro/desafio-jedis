@@ -12,6 +12,13 @@ pt-BR:
         other: 'Cidadãos'
     attributes:
       citizen:
+        photo: 'Foto'
         full_name: 'Nome Completo'
+        cpf: 'CPF'
+        cns: 'Cartão Nacional de Saúde'
+        email: 'Email'
+        date_birth: 'Data de Aniversário'
+        phone: 'Telefone'
+        active: 'Situação'
         created_at: 'Criado em'
         updated_at: 'Atualizado em'
