@@ -9,6 +9,6 @@
 #
 FactoryBot.define do
   factory :citizen do
-    full_name { "MyString" }
+    full_name { "Marco Castro" }
   end
 end
