@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_07_185606) do
     t.string "cpf"
     t.string "cns"
     t.string "email"
-    t.date "date_birth"
+    t.date "birthday"
     t.string "phone"
     t.boolean "active", default: true
   end

@@ -17,7 +17,7 @@ pt-BR:
         cpf: 'CPF'
         cns: 'Cartão Nacional de Saúde'
         email: 'Email'
-        date_birth: 'Data de Aniversário'
+        birthday: 'Data de Aniversário'
         phone: 'Telefone'
         active: 'Situação'
         created_at: 'Criado em'

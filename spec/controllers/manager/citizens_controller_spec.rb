@@ -4,7 +4,7 @@ RSpec.describe Manager::CitizensController,
                type: :controller do
   let(:citizen) { create(:citizen) }
   let(:valid_attributes) do
-    { full_name: 'Gessica Dutra', cns: '854154873000008', cpf: '03997653283', email: 'gessica.dutra@gmail.com', date_birth: Date.today - 18.years, phone: '5568981278826' }
+    { full_name: 'Gessica Dutra', cns: '854154873000008', cpf: '03997653283', email: 'gessica.dutra@gmail.com', birthday: Date.today - 18.years, phone: '5568981278826' }
   end
   let(:invalid_attributes) do
     { full_name: '' }

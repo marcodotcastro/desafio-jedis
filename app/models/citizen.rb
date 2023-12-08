@@ -4,9 +4,9 @@
 #
 #  id         :bigint           not null, primary key
 #  active     :boolean          default(TRUE)
+#  birthday   :date
 #  cns        :string
 #  cpf        :string
-#  date_birth :date
 #  email      :string
 #  full_name  :string
 #  phone      :string
@@ -16,7 +16,7 @@
 class Citizen < ApplicationRecord
   has_one_attached :photo
 
-  validates :full_name, :cns, :cpf, :email, :date_birth, :phone, presence: true
+  validates :full_name, :cns, :cpf, :email, :birthday, :phone, presence: true
   validates :cpf, cpf: true
   validates :email, email: true
   validates :cns, cns: true

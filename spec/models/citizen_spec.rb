@@ -6,7 +6,7 @@
 #  active     :boolean          default(TRUE)
 #  cns        :string
 #  cpf        :string
-#  date_birth :date
+#  birthday   :date
 #  email      :string
 #  full_name  :string
 #  phone      :string
@@ -21,7 +21,7 @@ RSpec.describe Citizen, type: :model do
     it { should validate_presence_of(:cns) }
     it { should validate_presence_of(:cpf) }
     it { should validate_presence_of(:email) }
-    it { should validate_presence_of(:date_birth) }
+    it { should validate_presence_of(:birthday) }
     it { should validate_presence_of(:phone) }
   end
 

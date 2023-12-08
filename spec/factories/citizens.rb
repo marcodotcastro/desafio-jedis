@@ -4,9 +4,9 @@
 #
 #  id         :bigint           not null, primary key
 #  active     :boolean          default(TRUE)
+#  birthday   :date
 #  cns        :string
 #  cpf        :string
-#  date_birth :date
 #  email      :string
 #  full_name  :string
 #  phone      :string
@@ -19,7 +19,12 @@ FactoryBot.define do
     cns { '294250161890007' }
     cpf { '23872851403' }
     email { FFaker::Internet.email }
-    date_birth { FFaker::Time.between((Date.today - 120.years), Date.today).to_date }
+    birthday do
+      FFaker::Time.between(
+        (Time.zone.today - 120.years),
+        Time.zone.today
+      ).to_date
+    end
     phone { FFaker::PhoneNumberBR.international_mobile_phone_number }
   end
 end
