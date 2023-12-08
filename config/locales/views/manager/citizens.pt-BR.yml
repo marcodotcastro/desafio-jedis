@@ -18,5 +18,8 @@ pt-BR:
           title: 'Editando Cidadão'
         show_view:
           title: 'Detalhando Cidadão'
+        legend:
+          citizen: 'Informações do Cidadão'
+          address: 'Informações do Endereço'
         _form:
           error: 'impediu esse cidadão de ser cadastrado'

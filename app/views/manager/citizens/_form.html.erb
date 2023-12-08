@@ -1,20 +1,44 @@
+<fieldset>
+  <legend class="text-2xl"><%= t('views.manager.citizens.legend.citizen') %></legend>
+  <div class="flex flex-col">
+    <div class="flex">
+      <%= form.input :photo, placeholder: ' ' %>
+    </div>
+    <div class="flex">
+      <%= form.input :full_name, placeholder: ' ' %>
+      <%= form.input :birthday, as: :date, placeholder: ' ' %>
+    </div>
+    <div class="flex">
+      <%= form.input :cpf, placeholder: ' ' %>
+      <%= form.input :cns, placeholder: ' ' %>
+    </div>
+    <div class="flex">
+      <%= form.input :email, placeholder: ' ' %>
+      <%= form.input :phone, placeholder: ' ' %>
+    </div>
+    <div class="w-full">
+      <%= form.input :active, as: :boolean, placeholder: ' ' %>
+    </div>
+  </div>
+</fieldset>
+
 <div class="flex flex-col">
-  <div class="w-full">
-    <%= form.input :photo, placeholder: ' '%>
-  </div>
-  <div class="flex">
-    <%= form.input :full_name, placeholder: ' ' %>
-    <%= form.input :birthday, as: :date, placeholder: ' '%>
-  </div>
-  <div class="flex">
-    <%= form.input :cpf, placeholder: ' '%>
-    <%= form.input :cns, placeholder: ' '%>
-  </div>
-  <div class="flex">
-    <%= form.input :email, placeholder: ' '%>
-    <%= form.input :phone, placeholder: ' '%>
-  </div>
-  <div class="w-full">
-    <%= form.input :active, as: :boolean, placeholder: ' '%>
-  </div>
+  <fieldset>
+    <legend class="text-xl"><%= t('views.manager.citizens.legend.address') %></legend>
+    <%= form.simple_fields_for :address do |sform| %>
+      <div class="flex">
+        <%= sform.input :cep, placeholder: ' ' %>
+      </div>
+      <div class="flex">
+        <%= sform.input :street, placeholder: ' ' %>
+        <%= sform.input :neighborhood, placeholder: ' ' %>
+        <%= sform.input :city, placeholder: ' ' %>
+        <%= sform.input :uf, placeholder: ' ' %>
+      </div>
+      <div class="flex">
+        <%= sform.input :complement, placeholder: ' ' %>
+        <%= sform.input :ibge, placeholder: ' ' %>
+      </div>
+    <% end %>
+  </fieldset>
 </div>

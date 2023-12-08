@@ -4,9 +4,9 @@
 #
 #  id         :bigint           not null, primary key
 #  active     :boolean          default(TRUE)
+#  birthday   :date
 #  cns        :string
 #  cpf        :string
-#  birthday   :date
 #  email      :string
 #  full_name  :string
 #  phone      :string
