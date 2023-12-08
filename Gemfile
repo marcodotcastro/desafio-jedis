@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.5'
+ruby '2.7.8'
 
 gem 'activeadmin', '~> 2.14'
 gem 'bootsnap', require: false
@@ -31,6 +31,7 @@ gem 'tzinfo-data',
     platforms: %i[mingw mswin x64_mingw jruby]
 gem 'yaml'
 gem 'image_processing', '>= 1.2'
+gem 'rubycritic', require: false
 
 group :development, :test do
   gem 'annotate'
@@ -50,7 +51,6 @@ group :development, :test do
   gem 'rubocop-factory_bot'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
-  gem 'rubycritic', require: false
   gem 'shoulda-matchers', '~> 5.0'
   gem 'simplecov'
   gem 'simplecov-json'

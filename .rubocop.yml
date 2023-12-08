@@ -6,7 +6,7 @@ require:
 # Mude para a versão de Ruby a ser utilizada e inclua aqui outros arquivos que
 # você considera importante que o RuboCop não execute como: node_modules, etc..
 AllCops:
-  TargetRubyVersion: 2.7.5
+  TargetRubyVersion: 2.7.8
   Exclude:
     - 'app/admin/**/*'
     - 'bin/**/*'
