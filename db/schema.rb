@@ -94,26 +94,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_08_141158) do
     t.boolean "active", default: true
   end
 
-  create_table "goals", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.datetime "finished_at"
-  end
-
-  create_table "tasks", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "status"
-    t.bigint "goal_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.datetime "finished_at"
-    t.index ["goal_id"], name: "index_tasks_on_goal_id"
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
 end

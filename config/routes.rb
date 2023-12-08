@@ -8,27 +8,8 @@ Rails.application.routes.draw do
              ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  namespace :api do
-    namespace :goals do
-      namespace :done do
-        post :index
-        post :show
-        post :many
-      end
-    end
-  end
-
   namespace :manager do
     resources :citizens, except: :destroy
-    resources :goals
-    namespace :goals do
-      namespace :done do
-        post :index
-        post :show
-        post :many
-      end
-    end
-
     get '', to: 'home#index', as: :home
   end
 

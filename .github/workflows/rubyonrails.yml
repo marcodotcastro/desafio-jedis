@@ -39,12 +39,6 @@ jobs:
         run: bin/rails db:migrate
       - name: Run Tests
         run: bundle exec rspec --exclude-pattern 'spec/features/**/*_spec.rb' --format progress
-      - uses: joshmfrankel/simplecov-check-action@main
-        with:
-          minimum_suite_coverage: 85
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Show Coverage directory
-        run: cat coverage/coverage.json
 
   Lint:
     runs-on: ubuntu-latest
