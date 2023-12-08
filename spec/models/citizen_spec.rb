@@ -58,5 +58,21 @@ RSpec.describe Citizen, type: :model do
         expect(citizen.errors[:email]).to include('não é um e-mail válido')
       end
     end
+    context 'cns' do
+      it 'valid' do
+        citizen = build(:citizen)
+        citizen.valid?
+
+        expect(citizen).to be_valid
+      end
+
+      it 'invalid' do
+        citizen = build(:citizen, cns: '111111111111111')
+        citizen.valid?
+
+        expect(citizen).to_not be_valid
+        expect(citizen.errors[:cns]).to include('não é um CNS válido')
+      end
+    end
   end
 end
