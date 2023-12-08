@@ -42,5 +42,21 @@ RSpec.describe Citizen, type: :model do
         expect(citizen.errors[:cpf]).to include('não é um CPF válido')
       end
     end
+    context 'email' do
+      it 'valid' do
+        citizen = build(:citizen)
+        citizen.valid?
+
+        expect(citizen).to be_valid
+      end
+
+      it 'invalid' do
+        citizen = build(:citizen, email: 'meu.email.com')
+        citizen.valid?
+
+        expect(citizen).to_not be_valid
+        expect(citizen.errors[:email]).to include('não é um e-mail válido')
+      end
+    end
   end
 end
