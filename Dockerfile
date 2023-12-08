@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y yarn
 ARG INSTALL_DEPENDENCIES
 RUN apt-get update -qq \
   && apt-get install -y --no-install-recommends ${INSTALL_DEPENDENCIES} \
-    build-essential libpq-dev git libfreetype6-dev gsfonts libmagickwand-dev imagemagick \
+    build-essential libvips libpq-dev git libfreetype6-dev gsfonts libmagickwand-dev imagemagick \
   && apt-get clean autoclean \
   && apt-get autoremove -y \
   && rm -rf \
