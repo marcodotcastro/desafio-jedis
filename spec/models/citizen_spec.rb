@@ -74,5 +74,31 @@ RSpec.describe Citizen, type: :model do
         expect(citizen.errors[:cns]).to include('não é um CNS válido')
       end
     end
+    context 'birthday' do
+      it 'valid' do
+        citizen = build(:citizen)
+        citizen.valid?
+
+        expect(citizen).to be_valid
+      end
+
+      context 'invalid' do
+        it 'not future' do
+          citizen = build(:citizen, birthday: (Time.zone.today + 1.day))
+          citizen.valid?
+
+          expect(citizen).to_not be_valid
+          expect(citizen.errors[:birthday]).to include('deve ser uma data no passado')
+        end
+
+        it 'up to 120 years' do
+          citizen = build(:citizen, birthday: (Time.zone.today - 121.years))
+          citizen.valid?
+
+          expect(citizen).to_not be_valid
+          expect(citizen.errors[:birthday]).to include('deve ser menor que 120 anos atrás')
+        end
+      end
+    end
   end
 end
