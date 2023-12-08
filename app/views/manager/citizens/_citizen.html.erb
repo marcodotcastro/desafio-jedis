@@ -1,6 +1,6 @@
 <tr class="border-b dark:border-gray-700" id="<%= dom_id citizen %>">
   <td class="px-4 py-3">
-    <input type="checkbox" id="<%= convert_to_id(citizen) %>-checkbox" data-citizens--index-target="checkbox" value="<%= citizen.id %>">
+      <%= image_tag citizen.photo.variant(resize_to_limit: [50, 50]), alt: citizen.full_name, class: "rounded-full" %>
   </td>
   <td class="px-4 py-3"> <%= citizen.full_name %></td>
   <td class="px-4 py-3"> <%= citizen.cpf %></td>
