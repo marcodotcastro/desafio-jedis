@@ -25,7 +25,7 @@ FactoryBot.define do
         Time.zone.today
       ).to_date
     end
-    phone { FFaker::PhoneNumberBR.international_mobile_phone_number }
+    phone { "55#{FFaker::PhoneNumberBR.mobile_phone_number.gsub(/[^\d]/, '')}" }
     photo do
       Rack::Test::UploadedFile.new('spec/support/images/mulher-1.jpg', 'image/png')
     end

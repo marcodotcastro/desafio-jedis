@@ -100,5 +100,23 @@ RSpec.describe Citizen, type: :model do
         end
       end
     end
+    context 'phone' do
+      it 'valid' do
+        citizen = build(:citizen)
+        citizen.valid?
+
+        expect(citizen).to be_valid
+      end
+
+      context 'invalid' do
+        it 'without ddi and ddd' do
+          citizen = build(:citizen, phone: '6699998888')
+          citizen.valid?
+
+          expect(citizen).to_not be_valid
+          expect(citizen.errors[:phone]).to include('não é um telefone válido')
+        end
+      end
+    end
   end
 end
