@@ -16,5 +16,4 @@ test:
   database: desafio_jedis_test
 
 production:
-  <<: *default
-  database: desafio_jedis_production
+  url: <%= ENV['DATABASE_URL'] %>
