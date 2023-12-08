@@ -17,6 +17,7 @@ class Citizen < ApplicationRecord
   has_one_attached :photo
 
   validates :full_name, :cns, :cpf, :email, :date_birth, :phone, presence: true
+  validates :cpf, cpf: true
 
   def to_s
     full_name
