@@ -20,6 +20,7 @@ class Citizen < ApplicationRecord
   validates :cpf, cpf: true
   validates :email, email: true
   validates :cns, cns: true
+  validates :birthday, birthday: { max_age: 120 }
 
   def to_s
     full_name
