@@ -29,5 +29,7 @@ FactoryBot.define do
     photo do
       Rack::Test::UploadedFile.new('spec/support/images/mulher-1.jpg', 'image/png')
     end
+
+    address { build(:address, citizen: instance) }
   end
 end
