@@ -17,6 +17,7 @@ RSpec.feature 'Manager Citizens', type: :feature do
     visit new_manager_citizen_path
 
     find('#citizen_full_name', match: :first).set('Cidadão 3')
+    attach_file('citizen[photo]', 'spec/support/images/mulher-1.jpg')
     find('#citizen_birthday_1i', match: :first).set('15')
     find('#citizen_birthday_2i', match: :first).set('4')
     find('#citizen_birthday_3i', match: :first).set('1974')
@@ -43,6 +44,7 @@ RSpec.feature 'Manager Citizens', type: :feature do
     click_link I18n.t('views.manager.citizens.edit')
 
     fill_in 'Nome Completo', with: 'Cidadão 3'
+    attach_file('citizen[photo]', 'spec/support/images/mulher-2.jpg')
     click_button I18n.t('views.manager.citizens.save')
 
     expect(page).to have_text('Cidadão atualizada com sucesso.')
