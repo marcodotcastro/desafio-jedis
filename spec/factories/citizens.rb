@@ -16,10 +16,10 @@
 FactoryBot.define do
   factory :citizen do
     full_name { FFaker::Name.name }
-    cns { "23872851403" }
-    cpf { "294250161890007" }
+    cns { '294250161890007' }
+    cpf { '23872851403' }
     email { FFaker::Internet.email }
     date_birth { FFaker::Time.between((Date.today - 120.years), Date.today).to_date }
-    phone {FFaker::PhoneNumberBR.international_mobile_phone_number }
+    phone { FFaker::PhoneNumberBR.international_mobile_phone_number }
   end
 end

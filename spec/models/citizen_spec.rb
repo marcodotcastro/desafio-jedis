@@ -24,4 +24,23 @@ RSpec.describe Citizen, type: :model do
     it { should validate_presence_of(:date_birth) }
     it { should validate_presence_of(:phone) }
   end
+
+  describe 'custom validations' do
+    context 'cpf' do
+      it 'valid' do
+        citizen = build(:citizen, cpf: '03997653283')
+        citizen.valid?
+
+        expect(citizen).to be_valid
+      end
+
+      it 'invalid' do
+        citizen = build(:citizen, cpf: '111111111111')
+        citizen.valid?
+
+        expect(citizen).to_not be_valid
+        expect(citizen.errors[:cpf]).to include('não é um CPF válido')
+      end
+    end
+  end
 end
