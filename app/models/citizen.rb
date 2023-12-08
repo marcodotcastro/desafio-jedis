@@ -19,6 +19,7 @@ class Citizen < ApplicationRecord
   validates :full_name, :cns, :cpf, :email, :date_birth, :phone, presence: true
   validates :cpf, cpf: true
   validates :email, email: true
+  validates :cns, cns: true
 
   def to_s
     full_name
