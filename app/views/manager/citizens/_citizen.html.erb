@@ -1,8 +1,10 @@
 <tr class="border-b dark:border-gray-700" id="<%= dom_id citizen %>">
   <td class="px-4 py-3">
-    <input type="checkbox" id="<%= convert_to_id(citizen) %>-checkbox" data-citizens--index-target="checkbox" value="<%= citizen.id %>">
+      <%= image_tag citizen.photo.variant(resize_to_limit: [50, 50]), alt: citizen.full_name, class: "rounded-full" %>
   </td>
   <td class="px-4 py-3"> <%= citizen.full_name %></td>
+  <td class="px-4 py-3"> <%= citizen.cpf %></td>
+  <td class="px-4 py-3"> <%= citizen.cns %></td>
   <td class="px-4 py-3 flex items-center justify-end">
     <button id="<%= convert_to_id(citizen) %>-dropdown-button" data-dropdown-toggle="<%= convert_to_id(citizen) %>-dropdown" class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100" type="button">
       <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

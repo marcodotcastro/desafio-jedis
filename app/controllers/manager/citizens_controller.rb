@@ -58,7 +58,7 @@ module Manager
     end
 
     def citizen_params
-      params.require(:citizen).permit(:full_name)
+      params.require(:citizen).permit(:full_name, :cns, :cpf, :email, :birthday, :phone, :active, :photo)
     end
   end
 end

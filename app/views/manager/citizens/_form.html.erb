@@ -1,5 +1,20 @@
 <div class="flex flex-col">
+  <div class="w-full">
+    <%= form.input :photo, placeholder: ' '%>
+  </div>
   <div class="flex">
     <%= form.input :full_name, placeholder: ' ' %>
+    <%= form.input :birthday, as: :date, placeholder: ' '%>
+  </div>
+  <div class="flex">
+    <%= form.input :cpf, placeholder: ' '%>
+    <%= form.input :cns, placeholder: ' '%>
+  </div>
+  <div class="flex">
+    <%= form.input :email, placeholder: ' '%>
+    <%= form.input :phone, placeholder: ' '%>
+  </div>
+  <div class="w-full">
+    <%= form.input :active, as: :boolean, placeholder: ' '%>
   </div>
 </div>
