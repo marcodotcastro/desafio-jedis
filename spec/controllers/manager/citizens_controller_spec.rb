@@ -3,8 +3,18 @@ require 'rails_helper'
 RSpec.describe Manager::CitizensController,
                type: :controller do
   let(:citizen) { create(:citizen) }
+  let(:new_attributes) { { full_name: 'Gessica' } }
   let(:valid_attributes) do
-    { full_name: 'Gessica Dutra', cns: '854154873000008', cpf: '03997653283', email: 'gessica.dutra@gmail.com', birthday: Date.today - 18.years, phone: '5568981278826' }
+    { full_name: 'Gessica Dutra', cns: '854154873000008',
+      cpf: '03997653283', email: 'gessica.dutra@gmail.com',
+      birthday: Date.today - 18.years, phone: '5568981278826',
+      address_attributes: {
+        cep: '88701-210', street: 'Rua Quinze De Novembro',
+        neighborhood: 'Centro',
+        city: 'Tubarão', uf: 'Santa Catarina',
+        complement: 'Perto da Padaria', ibge: '1243'
+      }
+    }
   end
   let(:invalid_attributes) do
     { full_name: '' }
@@ -113,15 +123,15 @@ RSpec.describe Manager::CitizensController,
       it 'updates the requested citizen' do
         put :update,
             params: { id: citizen.id,
-                      citizen: valid_attributes }
+                      citizen: new_attributes }
         citizen.reload
-        expect(citizen.full_name).to eq('Gessica Dutra')
+        expect(citizen.full_name).to eq('Gessica')
       end
 
       it 'redirects to the citizen' do
         put :update,
             params: { id: citizen.id,
-                      citizen: valid_attributes }
+                      citizen: new_attributes }
         expect(response).to redirect_to(manager_citizen_path(citizen))
       end
     end

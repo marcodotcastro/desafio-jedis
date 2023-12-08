@@ -1,11 +1,5 @@
 pt-BR:
   activerecord:
-    errors:
-      models:
-        citizen:
-          attributes:
-            name:
-              blank: 'nao pode ficar em branco'
     models:
       citizen:
         one: 'Cidadão'

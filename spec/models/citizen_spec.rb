@@ -4,9 +4,9 @@
 #
 #  id         :bigint           not null, primary key
 #  active     :boolean          default(TRUE)
+#  birthday   :date
 #  cns        :string
 #  cpf        :string
-#  birthday   :date
 #  email      :string
 #  full_name  :string
 #  phone      :string
@@ -97,6 +97,24 @@ RSpec.describe Citizen, type: :model do
 
           expect(citizen).to_not be_valid
           expect(citizen.errors[:birthday]).to include('deve ser menor que 120 anos atrás')
+        end
+      end
+    end
+    context 'phone' do
+      it 'valid' do
+        citizen = build(:citizen)
+        citizen.valid?
+
+        expect(citizen).to be_valid
+      end
+
+      context 'invalid' do
+        it 'without ddi and ddd' do
+          citizen = build(:citizen, phone: '6699998888')
+          citizen.valid?
+
+          expect(citizen).to_not be_valid
+          expect(citizen.errors[:phone]).to include('não é um telefone válido')
         end
       end
     end

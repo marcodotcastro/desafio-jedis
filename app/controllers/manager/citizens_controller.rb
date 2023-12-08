@@ -14,9 +14,12 @@ module Manager
 
     def new
       @citizen = Citizen.new
+      @citizen.build_address
     end
 
-    def edit; end
+    def edit
+      @citizen.build_address unless @citizen.address
+    end
 
     def create
       @citizen = Citizen.new(citizen_params)
@@ -58,7 +61,10 @@ module Manager
     end
 
     def citizen_params
-      params.require(:citizen).permit(:full_name, :cns, :cpf, :email, :birthday, :phone, :active, :photo)
+      params.require(:citizen).permit(
+        :full_name, :cns, :cpf, :email, :birthday, :phone, :active, :photo,
+        address_attributes: %i[id cep street neighborhood city uf complement ibge]
+      )
     end
   end
 end

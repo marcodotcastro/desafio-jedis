@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    models:
+      address:
+        one: 'Endereço'
+        other: 'Endereços'
+    attributes:
+      address:
+        cep: 'CEP'
+        street: 'Logradouro'
+        neighborhood: 'Bairro'
+        city: 'Cidade'
+        complement: 'Complemento'
+        ibge: 'IBGE'
+        created_at: 'Criado em'
+        updated_at: 'Atualizado em'
