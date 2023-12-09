@@ -1,2 +1,5 @@
 pt-BR:
   mailer:
+    citizen:
+      registered:
+        subject: "%{full_name} seu cadastro foi realizado com sucesso"
