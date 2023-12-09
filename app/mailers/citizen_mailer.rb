@@ -7,7 +7,8 @@ class CitizenMailer < ApplicationMailer
 
   def changed
     @citizen = params[:citizen]
-    @changes = params[:changes]
+    @citizen_changes = params[:citizen_changes]
+    @address_changes = params[:address_changes]
     mail(to: @citizen.email, subject: t('mailer.citizen.changed.subject', full_name: @citizen.full_name))
   end
 end
