@@ -32,6 +32,7 @@ gem 'tzinfo-data',
 gem 'yaml'
 gem 'image_processing', '>= 1.2'
 gem 'rubycritic', require: false
+gem 'twilio-ruby'
 
 group :development, :test do
   gem 'annotate'
