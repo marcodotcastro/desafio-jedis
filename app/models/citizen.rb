@@ -19,7 +19,8 @@ class Citizen < ApplicationRecord
   has_one :address, dependent: :destroy
   accepts_nested_attributes_for :address
 
-  validates :full_name, :cns, :cpf, :email, :birthday, :phone, :photo, presence: true
+  validates :full_name, :cns, :cpf, :email, :birthday, :phone, :photo,
+            presence: true
   validates :cpf, cpf: true
   validates :email, email: true
   validates :cns, cns: true

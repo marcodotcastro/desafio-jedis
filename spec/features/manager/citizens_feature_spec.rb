@@ -27,8 +27,10 @@ RSpec.feature 'Manager Citizens', type: :feature do
     find('#citizen_email', match: :first).set('gessica.dutra@gmail.com')
 
     find('#citizen_address_attributes_cep', match: :first).set('88701-210')
-    find('#citizen_address_attributes_street', match: :first).set('Rua Quinze De Novembro')
-    find('#citizen_address_attributes_neighborhood', match: :first).set('Centro')
+    find('#citizen_address_attributes_street',
+         match: :first).set('Rua Quinze De Novembro')
+    find('#citizen_address_attributes_neighborhood',
+         match: :first).set('Centro')
     find('#citizen_address_attributes_city', match: :first).set('Tubarão')
     find('#citizen_address_attributes_uf', match: :first).set('Santa Catarina')
 
@@ -37,7 +39,6 @@ RSpec.feature 'Manager Citizens', type: :feature do
     expect(page).to have_text('Cidadão cadastrada com sucesso.')
     expect(page).to have_text('Cidadão 3')
   end
-
 
   scenario 'show citizen' do
     visit manager_citizen_path(Citizen.first)
@@ -57,5 +58,4 @@ RSpec.feature 'Manager Citizens', type: :feature do
     expect(page).to have_text('Cidadão atualizada com sucesso.')
     expect(page).to have_text('Cidadão 3')
   end
-
 end

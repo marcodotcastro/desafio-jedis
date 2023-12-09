@@ -1,8 +1,7 @@
 module Manager
   class CitizensController < InternalController
     before_action :set_citizen,
-                  only: %i[show edit update
-                           destroy]
+                  only: %i[show edit update]
 
     def index
       @q = Citizen.ransack(params[:q])
@@ -63,7 +62,8 @@ module Manager
     def citizen_params
       params.require(:citizen).permit(
         :full_name, :cns, :cpf, :email, :birthday, :phone, :active, :photo,
-        address_attributes: %i[id cep street neighborhood city uf complement ibge]
+        address_attributes:
+          %i[id cep street neighborhood city uf complement ibge]
       )
     end
   end

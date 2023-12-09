@@ -11,6 +11,7 @@ gem 'chartkick', '~> 3.3.0'
 gem 'devise'
 gem 'foreman'
 gem 'groupdate'
+gem 'image_processing', '>= 1.2'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'kaminari'
@@ -20,6 +21,7 @@ gem 'rails', '~> 7.0.4', '>= 7.0.4.2'
 gem 'ransack', '< 4.0'
 gem 'rswag-api'
 gem 'rswag-ui'
+gem 'rubycritic', require: false
 gem 'sassc'
 gem 'simple_form'
 gem 'simple_form-tailwind'
@@ -27,12 +29,10 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'tailwindcss-rails'
 gem 'turbo-rails'
+gem 'twilio-ruby'
 gem 'tzinfo-data',
     platforms: %i[mingw mswin x64_mingw jruby]
 gem 'yaml'
-gem 'image_processing', '>= 1.2'
-gem 'rubycritic', require: false
-gem 'twilio-ruby'
 
 group :development, :test do
   gem 'annotate'

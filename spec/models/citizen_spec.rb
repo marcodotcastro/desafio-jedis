@@ -92,7 +92,9 @@ RSpec.describe Citizen, type: :model do
           citizen.valid?
 
           expect(citizen).to_not be_valid
-          expect(citizen.errors[:birthday]).to include('deve ser uma data no passado')
+          expect(citizen.errors[:birthday]).to(
+            include('deve ser uma data no passado')
+          )
         end
 
         it 'up to 120 years' do
@@ -100,7 +102,9 @@ RSpec.describe Citizen, type: :model do
           citizen.valid?
 
           expect(citizen).to_not be_valid
-          expect(citizen.errors[:birthday]).to include('deve ser menor que 120 anos atrás')
+          expect(citizen.errors[:birthday]).to(
+            include('deve ser menor que 120 anos atrás')
+          )
         end
       end
     end

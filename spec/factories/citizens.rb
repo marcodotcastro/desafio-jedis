@@ -27,7 +27,8 @@ FactoryBot.define do
     end
     phone { "55#{FFaker::PhoneNumberBR.mobile_phone_number.gsub(/[^\d]/, '')}" }
     photo do
-      Rack::Test::UploadedFile.new('spec/support/images/mulher-1.jpg', 'image/png')
+      Rack::Test::UploadedFile.new('spec/support/images/mulher-1.jpg',
+                                   'image/png')
     end
 
     address { build(:address, citizen: instance) }

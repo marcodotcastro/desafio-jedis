@@ -2,21 +2,22 @@ require 'rails_helper'
 
 RSpec.describe Manager::CitizensController,
                type: :controller do
-  let(:photo) { fixture_file_upload('spec/support/images/mulher-1.jpg', 'image/png') }
+  let(:photo) do
+    fixture_file_upload('spec/support/images/mulher-1.jpg', 'image/png')
+  end
   let(:citizen) { create(:citizen) }
   let(:new_attributes) { { full_name: 'Gessica' } }
   let(:valid_attributes) do
     { full_name: 'Gessica Dutra', cns: '854154873000008',
       cpf: '03997653283', email: 'gessica.dutra@gmail.com',
-      birthday: Date.today - 18.years, phone: '5568981278826',
+      birthday: Time.zone.today - 18.years, phone: '5568981278826',
       photo: photo,
       address_attributes: {
         cep: '88701-210', street: 'Rua Quinze De Novembro',
         neighborhood: 'Centro',
         city: 'Tubarão', uf: 'Santa Catarina',
         complement: 'Perto da Padaria', ibge: '1243'
-      }
-    }
+      } }
   end
   let(:invalid_attributes) do
     { full_name: '' }
@@ -147,5 +148,4 @@ RSpec.describe Manager::CitizensController,
       end
     end
   end
-
 end
