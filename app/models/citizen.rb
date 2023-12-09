@@ -27,6 +27,7 @@ class Citizen < ApplicationRecord
   validates :birthday, birthday: { max_age: 120 }
 
   after_create :after_create
+  before_update :before_update
 
   def to_s
     full_name
@@ -34,5 +35,9 @@ class Citizen < ApplicationRecord
 
   def after_create
     Senders::Registered.call(self)
+  end
+
+  def before_update
+    Senders::Changed.call(self)
   end
 end

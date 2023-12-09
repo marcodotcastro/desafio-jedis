@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+</head>
+<body>
+<h1><%= t('mailer.citizen.changed.subject', full_name: @citizen.full_name) %></h1>
+<p>Passando para informar que seus dados foram alterados.</p>
+<p>As alterações foram:</p>
+<% unless @changes.empty? %>
+  <ol>
+    <% @changes.each do |attribute, values| %>
+      <li>
+        <%= "#{t("activerecord.attributes.citizen.#{attribute}")}:" %>
+        <ul>
+          <li>
+            De: <%= "#{values[0]}" %>
+          </li>
+          <li>
+            Para: <%= "#{values[1]}" %>
+          </li>
+        </ul>
+      </li>
+    <% end %>
+  </ol>
+<% end %>
+</body>
+</html>
