@@ -8,6 +8,8 @@ Rails.application.routes.draw do
              ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+  root to: "manager/home#index"
+
   namespace :manager do
     resources :citizens, except: :destroy
     get '', to: 'home#index', as: :home
