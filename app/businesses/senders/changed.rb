@@ -10,6 +10,7 @@ class Senders::Changed < BusinessApplication
 
     get_changes
     send_mailer
+    send_sms if @citizen.attribute_changed?(:active)
   end
 
   private
@@ -23,5 +24,9 @@ class Senders::Changed < BusinessApplication
 
   def send_mailer
     CitizenMailer.with(citizen: @citizen, citizen_changes: @citizen_changes, address_changes: @address_changes).changed.deliver_later
+  end
+
+  def send_sms
+    Api::Sms::Twilio.new.send(@citizen.phone, I18n.t('mailer.citizen.registered.subject', full_name: @citizen.full_name))
   end
 end
