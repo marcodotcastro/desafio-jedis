@@ -9,3 +9,10 @@ Acesse a **Historia de Usuário: Cadastro de Munícipes** no github para entende
 
 ## Produtividade
 Acesse aqui para saber qual foi minha produtividade, [clique aqui](https://wakatime.com/@marcodotcastro/projects/jpigjahiix?start=2023-12-03&end=2023-12-09)
+
+## Outras Informações
+O CI foi configurado, [clique aqui](https://github.com/marcodotcastro/desafio-jedis/actions)
+
+O docker foi configurado para subir no heroku
+
+A cobertura dos testes está em 96%
